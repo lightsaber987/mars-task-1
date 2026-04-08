@@ -1,6 +1,6 @@
 # Arduino Morse Code Transmitter
 
-An Arduino sketch that takes text input from the Serial Monitor and transmits it as Morse code via a buzzer and LED simultaneously, at 19 WPM.
+An Arduino sketch that takes text input from the Serial Monitor and transmits it as Morse code via a buzzer, at 19 WPM.
 
 ---
 
@@ -20,8 +20,6 @@ An Arduino sketch that takes text input from the Serial Monitor and transmits it
 |--------------|-------------|----------------|
 | Buzzer (+)   | D6          | —              |
 | Buzzer (−)   | GND         | —              |
-| LED (+)      | D2          | Via 220Ω resistor |
-| LED (−)      | GND         | —              |
 
 ---
 
@@ -29,7 +27,7 @@ An Arduino sketch that takes text input from the Serial Monitor and transmits it
 
 1. The Arduino prompts you to enter text via the Serial Monitor.
 2. You type a message and press **Enter**.
-3. The sketch converts each character to Morse code and transmits it — the buzzer beeps and the LED flashes simultaneously.
+3. The sketch converts each character to Morse code and transmits it — the buzzer beeps.
 4. Spaces between words are handled automatically.
 5. Once done, `"Done!"` is printed to Serial and it prompts for the next message.
 
@@ -73,7 +71,6 @@ Morse timing follows the standard ITU rules:
 |----------|---------|------------------------------------|
 | `dt`     | 63 ms   | Dot duration (sets speed at 19 WPM)|
 | `buzPin` | D6      | Buzzer output pin                  |
-| `ledPin` | D2      | LED output pin                     |
 
 To change the transmission speed, adjust `dt`:
 - Faster = smaller `dt`
